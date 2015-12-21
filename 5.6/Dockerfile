@@ -2,7 +2,7 @@ FROM debian:jessie
 
 # Install PHP 5.6
 RUN apt-get update && \
-	apt-get install -y php7.0-cli php7.0-fpm php7.0-curl php7.0-imap php7.0-pgsql php7.0-gd php7.0-mcrypt
+	apt-get install -y php5-cli php5-fpm php5-curl php5-imap php5-pgsql php5-gd php5-mcrypt
 
 # Add FPM configuration
 ADD ./php-fpm.conf /etc/php5/fpm/
