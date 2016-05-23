@@ -19,8 +19,8 @@ RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/
         php5-gd \
         php5-mcrypt && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-    ln -s /etc/php/mods-available/devstack.ini /etc/php5/cli/conf.d/999-devstack.ini && \
-    ln -s /etc/php/mods-available/devstack.ini /etc/php5/cgi/conf.d/999-devstack.ini && \
+    ln -s /etc/php/mods-available/custom.ini /etc/php5/cli/conf.d/990-custom.ini && \
+    ln -s /etc/php/mods-available/custom.ini /etc/php5/cgi/conf.d/990-custom.ini && \
     apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 

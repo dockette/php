@@ -3,7 +3,7 @@ FROM dockette/php:7
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
 RUN apt-get update && apt-get install -y php7.0-fpm && \
-	ln -s /etc/php/mods-available/devstack.ini /etc/php/7.0/fpm/conf.d/999-devstack.ini && \
+	ln -s /etc/php/mods-available/custom.ini /etc/php/7.0/fpm/conf.d/990-custom.ini && \
 	apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
