@@ -1,23 +1,27 @@
-FROM debian:jessie
+FROM dockette/php:base
 
-# Install wget
-RUN apt-get update && apt-get install -y wget && \
-	echo "deb http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list && \
-	echo "deb-src http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list
+MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
-# Add GPG key
-RUN wget https://www.dotdeb.org/dotdeb.gpg && \
-  apt-key add dotdeb.gpg && \
-  apt-get update
+ADD conf.d/devstack.ini /etc/php/mods-available/devstack.ini
 
-# Install PHP 7.0
-RUN apt-get install -y php7.0-cli php7.0-fpm php7.0-curl php7.0-imap php7.0-pgsql php7.0-gd php7.0-mcrypt
+RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
+    echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
+    wget http://www.dotdeb.org/dotdeb.gpg && apt-key add dotdeb.gpg && rm dotdeb.gpg && \
+    apt-get update && \
+    apt-get install -y \
+        php7.0-cli \
+        php7.0-cgi \
+        php7.0-curl \
+        php7.0-imap \
+        php7.0-pgsql \
+        php7.0-mysql \
+        php7.0-sqlite \
+        php7.0-gd \
+        php7.0-mcrypt && \
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+    ln -s /etc/php/mods-available/devstack.ini /etc/php/7.0/cli/conf.d/999-devstack.ini && \
+    ln -s /etc/php/mods-available/devstack.ini /etc/php/7.0/cgi/conf.d/999-devstack.ini && \
+    apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
-# Add FPM configuration
-ADD ./php-fpm.conf /etc/php/7.0/fpm/
-
-# Clean image
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-# Start php fpm
-CMD ["php-fpm7.0"]
+CMD ["php-fpm7.0", "-F"]
