@@ -2,7 +2,7 @@ FROM dockette/php:base
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
-ADD conf.d/devstack.ini /etc/php/mods-available/devstack.ini
+ADD conf.d/custom.ini /etc/php/mods-available/custom.ini
 
 RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
     echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
