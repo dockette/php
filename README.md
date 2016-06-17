@@ -35,7 +35,7 @@
 ### Mailer
 
 Simple [PHP script](https://gist.githubusercontent.com/f3l1x/d6f02fc3b498e33059e8876a73e9ae13/raw/e3011357d082f3810c3d8d1f57427e36525dc30f/phpmailer) for
-storing emails in `/var/mail/{*}`.
+storing emails in `/var/log/mail/mail{*}`.
 
 ### Customizing
 
