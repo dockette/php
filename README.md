@@ -14,20 +14,40 @@
 
 - cli
 - cgi
-- fpm
 - curl
 - imap
 - pgsql
 - mysql
 - sqlite
 - gd
+- intl
+- mongo
+- geoip
+- memcached
 - mcrypt
+- xsl
+- imagick
+- ldap
+- redis
+- xmlrpc
+- bz2 (PHP 7 only)
 
-### PHPMailer
+### Mailer
 
-- [PHPMailer](https://gist.githubusercontent.com/f3l1x/d6f02fc3b498e33059e8876a73e9ae13/raw/e3011357d082f3810c3d8d1f57427e36525dc30f/phpmailer)
+Simple [PHP script](https://gist.githubusercontent.com/f3l1x/d6f02fc3b498e33059e8876a73e9ae13/raw/e3011357d082f3810c3d8d1f57427e36525dc30f/phpmailer) for
+storing emails in `/var/mail/{*}`.
 
-## 5.6
+### Customizing
+
+Please place you custom configuration to these folders:
+
+- /etc/php5/cli/conf.d/991-custom.ini
+- /etc/php5/cgi/conf.d/991-custom.ini
+- /etc/php5/fpm/conf.d/991-custom.ini
+
+## Usage
+
+### 5.6
 
 ```sh
 docker run \
@@ -35,7 +55,7 @@ docker run \
     --name php56 \
     dockette/php:5.6
 ```
-## 5.6 + FPM
+### 5.6 + FPM
 
 ```sh
 docker run \
@@ -44,7 +64,7 @@ docker run \
     dockette/php:5.6-fpm
 ```
 
-## 7.0
+### 7.0
 
 ```sh
 docker run \
@@ -53,7 +73,7 @@ docker run \
     dockette/php:7.0
 ```
 
-## 7.0 + FPM
+### 7.0 + FPM
 
 ```sh
 docker run \
