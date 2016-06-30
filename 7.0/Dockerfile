@@ -27,6 +27,7 @@ RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/
         php7.0-ldap \
         php7.0-redis \
         php7.0-xmlrpc \
+        php7.0-ssh2 \
         php7.0-bz2 && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     ln -s /etc/php/mods-available/custom.ini /etc/php/7.0/cli/conf.d/990-custom.ini && \
