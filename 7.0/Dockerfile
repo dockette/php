@@ -21,6 +21,7 @@ RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/
         php7.0-mongo \
         php7.0-geoip \
         php7.0-memcached \
+        php7.0-mbstring \
         php7.0-mcrypt \
         php7.0-xsl \
         php7.0-imagick \
