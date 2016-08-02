@@ -21,7 +21,6 @@ RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/
         php5-mongo \
         php5-geoip \
         php5-memcached \
-        php5-mbstring \
         php5-mcrypt \
         php5-xsl \
         php5-imagick \
