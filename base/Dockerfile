@@ -7,7 +7,7 @@ ENV XDEBUG_CONFIG="idekey=PHPSTORM"
 ENV PHPMAILER_BIN=/usr/local/bin/phpmailer
 ENV PHPMAILER_PATH=/var/log/mail
 
-RUN apt-get update && apt-get update -y && \
+RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get install -y wget curl && \
     curl -o ${PHPMAILER_BIN} https://raw.githubusercontent.com/dockette/phpmailer/master/phpmailer && \
     mkdir -p ${PHPMAILER_PATH} && \
