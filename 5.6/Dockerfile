@@ -2,7 +2,7 @@ FROM dockette/php:base
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
-ADD conf.d/custom.ini /etc/php/mods-available/custom.ini
+ADD conf.d/custom.ini /etc/php5/mods-available/custom.ini
 
 RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
     echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
@@ -29,8 +29,8 @@ RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/
         php5-ssh2 \
         php5-xmlrpc && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-    ln -s /etc/php/mods-available/custom.ini /etc/php5/cli/conf.d/990-custom.ini && \
-    ln -s /etc/php/mods-available/custom.ini /etc/php5/cgi/conf.d/990-custom.ini && \
+    ln -s /etc/php5/mods-available/custom.ini /etc/php5/cli/conf.d/990-custom.ini && \
+    ln -s /etc/php5/mods-available/custom.ini /etc/php5/cgi/conf.d/990-custom.ini && \
     apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
