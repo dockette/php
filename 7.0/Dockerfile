@@ -30,6 +30,7 @@ RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/
         php7.0-xmlrpc \
         php7.0-bz2 \
         php7.0-ssh2 \
+        php7.0-soap \
         php7.0-zip \
         php7.0-apcu && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \

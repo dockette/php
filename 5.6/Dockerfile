@@ -28,6 +28,7 @@ RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/
         php5-redis \
         php5-xmlrpc \
         php5-ssh2 \
+        php5-soap \
         php5-apcu && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     ln -s /etc/php5/mods-available/custom.ini /etc/php5/cli/conf.d/990-custom.ini && \
