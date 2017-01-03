@@ -9,9 +9,6 @@ ENV PHP_CLI_CONF_DIR=${PHP_CLI_DIR}/conf.d
 ENV PHP_CGI_DIR=/etc/php5/cgi/
 ENV PHP_CGI_CONF_DIR=${PHP_CGI_DIR}/conf.d
 
-# FILES
-ADD conf.d/custom.ini ${PHP_MODS_DIR}/custom.ini
-
 # INSTALLATION
 RUN apt-get update && apt-get dist-upgrade -y && \
     # DEPENDENCIES #############################################################
@@ -51,6 +48,9 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     # CLEAN UP #################################################################
     apt-get clean -y && apt-get autoclean -y && apt-get remove -y wget curl && apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
+
+# FILES (it overrides originals)
+ADD conf.d/custom.ini ${PHP_MODS_DIR}/custom.ini
 
 # WORKDIR
 WORKDIR /srv

@@ -11,10 +11,6 @@ ENV PHP_CGI_CONF_DIR=${PHP_CGI_DIR}/conf.d
 ENV PHP_FPM_DIR=/etc/php/7.0/fpm/
 ENV PHP_FPM_CONF_DIR=${PHP_FPM_DIR}/conf.d
 
-# FILES
-ADD conf.d/custom.ini ${PHP_MODS_DIR}/custom.ini
-ADD fpm/php-fpm.conf ${PHP_FPM_DIR}/php-fpm.conf
-
 # INSTALLATION
 RUN apt-get update && apt-get dist-upgrade -y && \
     # DEPENDENCIES #############################################################
@@ -27,8 +23,8 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get install -y \
         php7.0-apcu \
         php7.0-bz2 \
-        php7.0-cli \
         php7.0-cgi \
+        php7.0-cli \
         php7.0-curl \
         php7.0-fpm \
         php7.0-geoip \
@@ -56,9 +52,14 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     # PHP MOD(s) ###############################################################
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_CLI_CONF_DIR}/999-custom.ini && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_CGI_CONF_DIR}/999-custom.ini && \
+    ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_FPM_CONF_DIR}/999-custom.ini && \
     # CLEAN UP #################################################################
     apt-get clean -y && apt-get autoclean -y && apt-get remove -y wget curl && apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
+
+# FILES (it overrides originals)
+ADD conf.d/custom.ini ${PHP_MODS_DIR}/custom.ini
+ADD fpm/php-fpm.conf ${PHP_FPM_DIR}/php-fpm.conf
 
 # WORKDIR
 WORKDIR /srv

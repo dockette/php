@@ -9,9 +9,6 @@ ENV PHP_CLI_CONF_DIR=${PHP_CLI_DIR}/conf.d
 ENV PHP_CGI_DIR=/etc/php/7.0/cgi/
 ENV PHP_CGI_CONF_DIR=${PHP_CGI_DIR}/conf.d
 
-# FILES
-ADD conf.d/custom.ini ${PHP_MODS_DIR}/custom.ini
-
 # INSTALLATION
 RUN apt-get update && apt-get dist-upgrade -y && \
     # DEPENDENCIES #############################################################
@@ -24,10 +21,9 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get install -y \
         php7.0-apcu \
         php7.0-bz2 \
-        php7.0-cli \
         php7.0-cgi \
+        php7.0-cli \
         php7.0-curl \
-        php7.0-fpm \
         php7.0-geoip \
         php7.0-gd \
         php7.0-intl \
@@ -56,6 +52,9 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     # CLEAN UP #################################################################
     apt-get clean -y && apt-get autoclean -y && apt-get remove -y wget curl && apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
+
+# FILES (it overrides originals)
+ADD conf.d/custom.ini ${PHP_MODS_DIR}/custom.ini
 
 # WORKDIR
 WORKDIR /srv
