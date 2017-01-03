@@ -35,7 +35,7 @@ This image has preinstalled couple of PHP extensions. Let's take a look.
 | mysql     | mysql     | mysql     | mysql     |
 | pgsql     | pgsql     | pgsql     | pgsql     |
 | redis     | redis     | redis     | redis     |
-|           |           | soap      | soap      |
+| -         | -         | soap      | soap      |
 | sqlite    | sqlite    | sqlite    | sqlite    |
 | ssh2      | ssh2      | ssh2      | ssh2      |
 | xmlrpc    | xmlrpc    | xmlrpc    | xmlrpc    |
@@ -51,7 +51,7 @@ You can easily customize this image by adding extra INI file to righ place.
 - /etc/php5/cgi/conf.d/991-custom.ini
 - /etc/php5/fpm/conf.d/991-custom.ini
 
-#### `PHP 5.6`
+#### `PHP 7.0`
 
 - /etc/php/7.0/cli/conf.d/991-custom.ini
 - /etc/php/7.0/cgi/conf.d/991-custom.ini
@@ -67,35 +67,52 @@ This super image has also preinstalled [Composer](https://getcomposer.org) with 
 
 ### 5.6
 
-```sh
-docker run \
-    -v /path/to/site:/srv
-    --name php56 \
-    dockette/php:5.6
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/php5.svg?style=flat)](https://hub.docker.com/r/dockette/php5/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php5.svg?style=flat)](https://hub.docker.com/r/dockette/php5/)
+
 ```
+docker run -v /path/to/site:/srv dockette/php:5
+```
+
+```
+docker run -v /path/to/site:/srv dockette/php:5
+```
+
 ### 5.6 + FPM
 
-```sh
-docker run \
-    -v /path/to/site:/srv
-    --name php56 \
-    dockette/php:5.6-fpm
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/php5-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php5-fpm/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php5-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php5-fpm/)
+
+```
+docker run -v /path/to/site:/srv dockette/php:5-fpm
+```
+
+```
+docker run -v /path/to/site:/srv dockette/php5-fpm
 ```
 
 ### 7.0
 
-```sh
-docker run \
-    -v /path/to/site:/srv
-    --name php70 \
-    dockette/php:7.0
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/php7.svg?style=flat)](https://hub.docker.com/r/dockette/php7/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php7.svg?style=flat)](https://hub.docker.com/r/dockette/php7/)
+
+```
+docker run -v /path/to/site:/srv dockette/php:7
+```
+
+```
+docker run -v /path/to/site:/srv dockette/php7
 ```
 
 ### 7.0 + FPM
 
-```sh
-docker run \
-    -v /path/to/site:/srv
-    --name php70 \
-    dockette/php:7.0-fpm
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/php7-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php7-fpm/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php7-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php7-fpm/)
+
+```
+docker run -v /path/to/site:/srv dockette/php:7-fpm
+```
+
+```
+docker run -v /path/to/site:/srv dockette/php7-fpm
 ```
