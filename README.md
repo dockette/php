@@ -75,7 +75,7 @@ docker run -v /path/to/site:/srv dockette/php:5
 ```
 
 ```
-docker run -v /path/to/site:/srv dockette/php:5
+docker run -v /path/to/site:/srv dockette/php5
 ```
 
 ### 5.6 + FPM
