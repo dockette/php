@@ -19,6 +19,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     wget http://www.dotdeb.org/dotdeb.gpg && apt-key add dotdeb.gpg && rm dotdeb.gpg && \
     apt-get update && \
     apt-get install -y \
+        php7.0-apc \
         php7.0-apcu \
         php7.0-bz2 \
         php7.0-cgi \
