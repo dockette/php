@@ -8,24 +8,26 @@ ENV PHP_CLI_DIR=/etc/php/7.0/cli/
 ENV PHP_CLI_CONF_DIR=${PHP_CLI_DIR}/conf.d
 ENV PHP_CGI_DIR=/etc/php/7.0/cgi/
 ENV PHP_CGI_CONF_DIR=${PHP_CGI_DIR}/conf.d
+ENV TZ=Europe/Prague
 
 # INSTALLATION
 RUN apt-get update && apt-get dist-upgrade -y && \
     # DEPENDENCIES #############################################################
-    apt-get install -y wget curl && \
-    # PHP DOTDEB ###############################################################
-    echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
-    echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
-    wget http://www.dotdeb.org/dotdeb.gpg && apt-key add dotdeb.gpg && rm dotdeb.gpg && \
+    apt-get install -y wget curl apt-transport-https ca-certificates && \
+    # PHP DEB.SURY.CZ ##########################################################
+    wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
+    echo "deb https://packages.sury.org/php/ jessie main" > /etc/apt/sources.list.d/php.list && \
     apt-get update && \
-    apt-get install -y \
+    apt-get install -y --no-install-recommends \
         php7.0-apc \
         php7.0-apcu \
         php7.0-bz2 \
+        php7.0-calendar \
         php7.0-cgi \
         php7.0-cli \
         php7.0-curl \
         php7.0-geoip \
+        php7.0-gettext \
         php7.0-gd \
         php7.0-intl \
         php7.0-imagick \
@@ -36,6 +38,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
         php7.0-memcached \
         php7.0-mongo \
         php7.0-mysql \
+        php7.0-pdo \
         php7.0-pgsql \
         php7.0-redis \
         php7.0-soap \
@@ -51,7 +54,10 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_CLI_CONF_DIR}/999-custom.ini && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_CGI_CONF_DIR}/999-custom.ini && \
     # CLEAN UP #################################################################
-    apt-get clean -y && apt-get autoclean -y && apt-get remove -y wget curl && apt-get autoremove -y && \
+    apt-get clean -y && \
+    apt-get autoclean -y && \
+    apt-get remove -y wget curl apt-transport-https && \
+    apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
 # FILES (it overrides originals)

@@ -3,12 +3,12 @@ FROM dockette/jessie
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
 # PHP
-ENV PHP_MODS_DIR=/etc/php/5.6/mods-available
-ENV PHP_CLI_DIR=/etc/php/5.6/cli/
+ENV PHP_MODS_DIR=/etc/php/7.1/mods-available
+ENV PHP_CLI_DIR=/etc/php/7.1/cli/
 ENV PHP_CLI_CONF_DIR=${PHP_CLI_DIR}/conf.d
-ENV PHP_CGI_DIR=/etc/php/5.6/cgi/
+ENV PHP_CGI_DIR=/etc/php/7.1/cgi/
 ENV PHP_CGI_CONF_DIR=${PHP_CGI_DIR}/conf.d
-ENV PHP_FPM_DIR=/etc/php/5.6/fpm/
+ENV PHP_FPM_DIR=/etc/php/7.1/fpm/
 ENV PHP_FPM_CONF_DIR=${PHP_FPM_DIR}/conf.d
 ENV TZ=Europe/Prague
 
@@ -21,35 +21,35 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     echo "deb https://packages.sury.org/php/ jessie main" > /etc/apt/sources.list.d/php.list && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
-        php5.6-apc \
-        php5.6-apcu \
-        php5.6-bz2 \
-        php5.6-calendar \
-        php5.6-cgi \
-        php5.6-cli \
-        php5.6-curl \
-        php5.6-fpm \
-        php5.6-geoip \
-        php5.6-gettext \
-        php5.6-gd \
-        php5.6-intl \
-        php5.6-imagick \
-        php5.6-imap \
-        php5.6-ldap \
-        php5.6-mbstring \
-        php5.6-mcrypt \
-        php5.6-memcached \
-        php5.6-mongo \
-        php5.6-mysql \
-        php5.6-pdo \
-        php5.6-pgsql \
-        php5.6-redis \
-        php5.6-soap \
-        php5.6-sqlite \
-        php5.6-ssh2 \
-        php5.6-zip \
-        php5.6-xmlrpc \
-        php5.6-xsl && \
+        php7.1-apc \
+        php7.1-apcu \
+        php7.1-bz2 \
+        php7.1-calendar \
+        php7.1-cgi \
+        php7.1-cli \
+        php7.1-curl \
+        php7.1-fpm \
+        php7.1-geoip \
+        php7.1-gettext \
+        php7.1-gd \
+        php7.1-intl \
+        php7.1-imagick \
+        php7.1-imap \
+        php7.1-ldap \
+        php7.1-mbstring \
+        php7.1-mcrypt \
+        php7.1-memcached \
+        php7.1-mongo \
+        php7.1-mysql \
+        php7.1-pdo \
+        php7.1-pgsql \
+        php7.1-redis \
+        php7.1-soap \
+        php7.1-sqlite \
+        php7.1-ssh2 \
+        php7.1-zip \
+        php7.1-xmlrpc \
+        php7.1-xsl && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     composer global require "hirak/prestissimo:^0.3" && \
