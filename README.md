@@ -15,31 +15,31 @@ Ready-to-use images for PHP 5.6 / 7.0 / 7.1.
 
 This image has preinstalled couple of PHP extensions. Let's take a look.
 
-| 5.5       	| 5.5+FPM   	| 5.6       	| 5.6+FPM   	| 7.0       	| 7.0+FPM   	| 7.1       	| 7.1+FPM   	|
-|-----------	|-----------	|-----------	|-----------	|-----------	|-----------	|-----------	|-----------	|
-| apcu      	| apcu      	| apcu      	| apcu      	| apcu      	| apcu      	| apcu      	| apcu      	|
-| bz2       	| bz2       	| bz2       	| bz2       	| bz2       	| bz2       	| bz2       	| bz2       	|
-| cgi       	| cgi       	| cgi       	| cgi       	| cgi       	| cgi       	| cgi       	| cgi       	|
-| cli       	| cli       	| cli       	| cli       	| cli       	| cli       	| cli       	| cli       	|
-| curl      	| curl      	| curl      	| curl      	| curl      	| curl      	| curl      	| curl      	|
-| geoip     	| geoip     	| geoip     	| geoip     	| geoip     	| geoip     	| geoip     	| geoip     	|
-| gd        	| gd        	| gd        	| gd        	| gd        	| gd        	| gd        	| gd        	|
-| -         	| fpm       	| -         	| fpm       	| -         	| fpm       	| -         	| fpm       	|
-| intl      	| intl      	| intl      	| intl      	| intl      	| intl      	| intl      	| intl      	|
-| imagick   	| imagick   	| imagick   	| imagick   	| imagick   	| imagick   	| imagick   	| imagick   	|
-| imap      	| imap      	| imap      	| imap      	| imap      	| imap      	| imap      	| imap      	|
-| ldap      	| ldap      	| ldap      	| ldap      	| ldap      	| ldap      	| ldap      	| ldap      	|
-| mcrypt    	| mcrypt    	| mcrypt    	| mcrypt    	| mcrypt    	| mcrypt    	| mcrypt    	| mcrypt    	|
-| memcached 	| memcached 	| memcached 	| memcached 	| memcached 	| memcached 	| memcached 	| memcached 	|
-| mongo     	| mongo     	| mongo     	| mongo     	| mongo     	| mongo     	| mongo     	| mongo     	|
-| mysql     	| mysql     	| mysql     	| mysql     	| mysql     	| mysql     	| mysql     	| mysql     	|
-| pgsql     	| pgsql     	| pgsql     	| pgsql     	| pgsql     	| pgsql     	| pgsql     	| pgsql     	|
-| redis     	| redis     	| redis     	| redis     	| redis     	| redis     	| redis     	| redis     	|
-| soap      	| soap      	| soap      	| soap      	| soap      	| soap      	| soap      	| soap      	|
-| sqlite    	| sqlite    	| sqlite    	| sqlite    	| sqlite    	| sqlite    	| sqlite    	| sqlite    	|
-| ssh2      	| ssh2      	| ssh2      	| ssh2      	| ssh2      	| ssh2      	| ssh2      	| ssh2      	|
-| xmlrpc    	| xmlrpc    	| xmlrpc    	| xmlrpc    	| xmlrpc    	| xmlrpc    	| xmlrpc    	| xmlrpc    	|
-| xsl       	| xsl       	| xsl       	| xsl       	| xls       	| xls       	| xsl       	| xsl       	|
+| 5.6       | 5.6+FPM   | 7.0       | 7.0+FPM   | 7.1       | 7.1+FPM   |
+|-----------|-----------|-----------|-----------|-----------|-----------|
+| apcu      | apcu      | apcu      | apcu      | apcu      | apcu      |
+| bz2       | bz2       | bz2       | bz2       | bz2       | bz2       |
+| cgi       | cgi       | cgi       | cgi       | cgi       | cgi       |
+| cli       | cli       | cli       | cli       | cli       | cli       |
+| curl      | curl      | curl      | curl      | curl      | curl      |
+| geoip     | geoip     | geoip     | geoip     | geoip     | geoip     |
+| gd        | gd        | gd        | gd        | gd        | gd        |
+| -         | fpm       | -         | fpm       | -         | fpm       |
+| intl      | intl      | intl      | intl      | intl      | intl      |
+| imagick   | imagick   | imagick   | imagick   | imagick   | imagick   |
+| imap      | imap      | imap      | imap      | imap      | imap      |
+| ldap      | ldap      | ldap      | ldap      | ldap      | ldap      |
+| mcrypt    | mcrypt    | mcrypt    | mcrypt    | mcrypt    | mcrypt    |
+| memcached | memcached | memcached | memcached | memcached | memcached |
+| mongo     | mongo     | mongo     | mongo     | mongo     | mongo     |
+| mysql     | mysql     | mysql     | mysql     | mysql     | mysql     |
+| pgsql     | pgsql     | pgsql     | pgsql     | pgsql     | pgsql     |
+| redis     | redis     | redis     | redis     | redis     | redis     |
+| soap      | soap      | soap      | soap      | soap      | soap      |
+| sqlite    | sqlite    | sqlite    | sqlite    | sqlite    | sqlite    |
+| ssh2      | ssh2      | ssh2      | ssh2      | ssh2      | ssh2      |
+| xmlrpc    | xmlrpc    | xmlrpc    | xmlrpc    | xmlrpc    | xmlrpc    |
+| xsl       | xsl       | xls       | xls       | xsl       | xsl       |
 
 ## Customizing
 
@@ -87,7 +87,7 @@ docker run -v /path/to/site:/srv dockette/php71
 ```
 
 ```
-docker run -v /path/to/site:/srv dockette/php:71
+docker run -v /path/to/site:/srv dockette/php:7.1
 ```
 
 ### 7.1 + FPM
@@ -100,7 +100,7 @@ docker run -v /path/to/site:/srv dockette/php71-fpm
 ```
 
 ```
-docker run -v /path/to/site:/srv dockette/php:71-fpm
+docker run -v /path/to/site:/srv dockette/php:7.1-fpm
 ```
 
 ### 7.0
@@ -113,7 +113,7 @@ docker run -v /path/to/site:/srv dockette/php70
 ```
 
 ```
-docker run -v /path/to/site:/srv dockette/php:70
+docker run -v /path/to/site:/srv dockette/php:7.0
 ```
 
 ### 7.0 + FPM
@@ -126,7 +126,7 @@ docker run -v /path/to/site:/srv dockette/php70-fpm
 ```
 
 ```
-docker run -v /path/to/site:/srv dockette/php:70-fpm
+docker run -v /path/to/site:/srv dockette/php:7.0-fpm
 ```
 
 ### 5.6
@@ -139,7 +139,7 @@ docker run -v /path/to/site:/srv dockette/php56
 ```
 
 ```
-docker run -v /path/to/site:/srv dockette/php:56
+docker run -v /path/to/site:/srv dockette/php:5.6
 ```
 
 ### 5.6 + FPM
@@ -152,7 +152,7 @@ docker run -v /path/to/site:/srv dockette/php56-fpm
 ```
 
 ```
-docker run -v /path/to/site:/srv dockette/php:56-fpm
+docker run -v /path/to/site:/srv dockette/php:5.6-fpm
 ```
 
 ### 5.5
@@ -165,7 +165,7 @@ docker run -v /path/to/site:/srv dockette/php55
 ```
 
 ```
-docker run -v /path/to/site:/srv dockette/php:55
+docker run -v /path/to/site:/srv dockette/php:5.5
 ```
 
 ### 5.5 + FPM
@@ -178,5 +178,5 @@ docker run -v /path/to/site:/srv dockette/php55-fpm
 ```
 
 ```
-docker run -v /path/to/site:/srv dockette/php:55-fpm
+docker run -v /path/to/site:/srv dockette/php:5.5-fpm
 ```
