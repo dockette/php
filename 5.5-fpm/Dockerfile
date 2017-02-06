@@ -27,6 +27,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
         php5.5-calendar \
         php5.5-cgi \
         php5.5-cli \
+        php5.5-ctype \
         php5.5-curl \
         php5.5-fpm \
         php5.5-geoip \

@@ -27,6 +27,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
         php7.0-calendar \
         php7.0-cgi \
         php7.0-cli \
+        php7.0-ctype \
         php7.0-curl \
         php7.0-fpm \
         php7.0-geoip \
