@@ -57,7 +57,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     # CLEAN UP #################################################################
     apt-get clean -y && \
     apt-get autoclean -y && \
-    apt-get remove -y wget curl apt-transport-https && \
+    apt-get remove -y wget curl && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
