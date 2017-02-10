@@ -137,6 +137,6 @@ docker run -v /path/to/site:/srv dockette/php:5.5-fpm
 
 In case of customization:
 
-- /etc/php/5.5/cli/conf.d/991-custom.ini
-- /etc/php/5.5/cgi/conf.d/991-custom.ini
-- /etc/php/5.5/fpm/conf.d/991-custom.ini
+- /etc/php5/cli/conf.d/991-custom.ini
+- /etc/php5/cgi/conf.d/991-custom.ini
+- /etc/php5/fpm/conf.d/991-custom.ini
