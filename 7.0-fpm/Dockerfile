@@ -72,4 +72,4 @@ ADD conf.d/custom.ini ${PHP_MODS_DIR}/custom.ini
 WORKDIR /srv
 
 # COMMAND
-CMD ["php"]
+CMD ["php-fpm7.0"]
