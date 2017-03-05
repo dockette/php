@@ -46,7 +46,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
         php7.0-pgsql \
         php7.0-redis \
         php7.0-soap \
-        php7.0-sqlite \
+        php7.0-sqlite3 \
         php7.0-ssh2 \
         php7.0-zip \
         php7.0-xmlrpc \

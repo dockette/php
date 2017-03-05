@@ -35,7 +35,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
         php5-mysql \
         php5-pgsql \
         php5-redis \
-        php5-sqlite \
+        php5-sqlite3 \
         php5-ssh2 \
         php5-xmlrpc \
         php5-xsl && \

@@ -46,7 +46,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
         php5.6-pgsql \
         php5.6-redis \
         php5.6-soap \
-        php5.6-sqlite \
+        php5.6-sqlite3 \
         php5.6-ssh2 \
         php5.6-zip \
         php5.6-xmlrpc \
