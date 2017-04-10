@@ -23,6 +23,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get install -y --no-install-recommends \
         php7.0-apc \
         php7.0-apcu \
+        php7.0-bcmath \
         php7.0-bz2 \
         php7.0-calendar \
         php7.0-cgi \

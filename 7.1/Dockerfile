@@ -21,6 +21,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get install -y --no-install-recommends \
         php7.1-apc \
         php7.1-apcu \
+        php7.1-bcmath \
         php7.1-bz2 \
         php7.1-calendar \
         php7.1-cgi \

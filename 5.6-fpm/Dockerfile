@@ -23,6 +23,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get install -y --no-install-recommends \
         php5.6-apc \
         php5.6-apcu \
+        php5.6-bcmath \
         php5.6-bz2 \
         php5.6-calendar \
         php5.6-cgi \
