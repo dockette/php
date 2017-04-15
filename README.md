@@ -59,8 +59,8 @@ This super image has also preinstalled [Composer](https://getcomposer.org) with 
 
 ### 7.1 / 7.1+FPM
 
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/php71.svg?style=flat)](https://hub.docker.com/r/dockette/php70/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php71.svg?style=flat)](https://hub.docker.com/r/dockette/php70/)
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/php71.svg?style=flat)](https://hub.docker.com/r/dockette/php71/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php71.svg?style=flat)](https://hub.docker.com/r/dockette/php71/)
 [![Docker Stars](https://img.shields.io/docker/stars/dockette/php71-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php71-fpm/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php71-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php71-fpm/)
 
@@ -84,8 +84,8 @@ In case of customization:
 
 [![Docker Stars](https://img.shields.io/docker/stars/dockette/php70.svg?style=flat)](https://hub.docker.com/r/dockette/php70/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php70.svg?style=flat)](https://hub.docker.com/r/dockette/php70/)
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/php7-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php7-fpm/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php7-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php7-fpm/)
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/php7-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php70-fpm/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php7-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php70-fpm/)
 
 ```
 docker run -v /path/to/site:/srv dockette/php70
