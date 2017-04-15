@@ -16,30 +16,38 @@ Ready-to-use images for PHP 5.5 / 5.6 / 7.0 / 7.1, with FPM and Composer preinst
 These images have preinstalled couple of PHP extensions. Let's take a look.
 
 | PHP       | PHP+FPM   | 
-|-----------|-----------|-
+|-----------|-----------|
+| apc       | apc       | 
 | apcu      | apcu      | 
+| bcmath    | bcmath    | 
 | bz2       | bz2       | 
+| calendar  | calendar  | 
 | cgi       | cgi       | 
 | cli       | cli       | 
+| ctype     | ctype     | 
 | curl      | curl      | 
 | geoip     | geoip     | 
+| gettext   | gettext   | 
 | gd        | gd        | 
 | -         | fpm       | 
 | intl      | intl      | 
 | imagick   | imagick   | 
 | imap      | imap      | 
 | ldap      | ldap      | 
+| mbstring  | mbstring  | 
 | mcrypt    | mcrypt    | 
 | memcached | memcached | 
 | mongo     | mongo     |
-| mysql     | mysql     | 
+| mysql     | mysql     |
+| pdo       | pdo       | 
 | pgsql     | pgsql     | 
 | redis     | redis     | 
 | soap      | soap      | 
-| sqlite    | sqlite    | 
+| sqlite3   | sqlite3   | 
 | ssh2      | ssh2      | 
 | xmlrpc    | xmlrpc    | 
 | xsl       | xsl       | 
+| zip       | zip       | 
 
 ## Composer
 
