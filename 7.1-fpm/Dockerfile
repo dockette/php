@@ -10,6 +10,7 @@ ENV PHP_CGI_DIR=/etc/php/7.1/cgi/
 ENV PHP_CGI_CONF_DIR=${PHP_CGI_DIR}/conf.d
 ENV PHP_FPM_DIR=/etc/php/7.1/fpm/
 ENV PHP_FPM_CONF_DIR=${PHP_FPM_DIR}/conf.d
+ENV PHP_FPM_POOL_DIR=${PHP_FPM_DIR}/pool.d
 ENV TZ=Europe/Prague
 
 # INSTALLATION
@@ -60,6 +61,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_CGI_CONF_DIR}/999-custom.ini && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_FPM_CONF_DIR}/999-custom.ini && \
     # CLEAN UP #################################################################
+    rm ${PHP_FPM_POOL_DIR}/www.conf && \
     apt-get clean -y && \
     apt-get autoclean -y && \
     apt-get remove -y wget curl && \
@@ -68,6 +70,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
 
 # FILES (it overrides originals)
 ADD conf.d/custom.ini ${PHP_MODS_DIR}/custom.ini
+ADD fpm/php-fpm.conf ${PHP_FPM_DIR}/php-fpm.conf
 
 # WORKDIR
 WORKDIR /srv
