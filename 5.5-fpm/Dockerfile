@@ -20,8 +20,8 @@ RUN apt update && apt dist-upgrade -y && \
     echo 'deb http://packages.dotdeb.org wheezy-php55 all' >> /etc/apt/sources.list.d/dotdeb.list && \
     echo 'deb-src http://packages.dotdeb.org wheezy-php55 all' >> /etc/apt/sources.list.d/dotdeb.list && \
     wget http://www.dotdeb.org/dotdeb.gpg && apt-key add dotdeb.gpg && rm dotdeb.gpg && \
-    apt update && \
-    apt install -y \
+    apt-get update && \
+    apt-get install -y \
         php5-apcu \
         php5-cgi \
         php5-cli \
