@@ -14,9 +14,9 @@ ENV PHP_FPM_POOL_DIR=${PHP_FPM_DIR}/pool.d
 ENV TZ=Europe/Prague
 
 # INSTALLATION
-RUN apt update && apt dist-upgrade -y && \
+RUN apt-get update && apt-get dist-upgrade -y && \
     # DEPENDENCIES #############################################################
-    apt install -y wget curl apt-transport-https ca-certificates && \
+    apt-get install -y wget curl apt-transport-https ca-certificates && \
     # PHP DEB.SURY.CZ ##########################################################
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
     echo "deb https://packages.sury.org/php/ jessie main" > /etc/apt/sources.list.d/php.list && \
