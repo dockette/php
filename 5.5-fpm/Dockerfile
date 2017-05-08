@@ -13,15 +13,15 @@ ENV PHP_FPM_CONF_DIR=${PHP_FPM_DIR}/conf.d
 ENV PHP_FPM_POOL_DIR=${PHP_FPM_DIR}/pool.d
 
 # INSTALLATION
-RUN apt-get update && apt-get dist-upgrade -y && \
+RUN apt update && apt dist-upgrade -y && \
     # DEPENDENCIES #############################################################
-    apt-get install -y wget curl && \
+    apt install -y wget curl && \
     # PHP DOTDEB ###############################################################
     echo 'deb http://packages.dotdeb.org wheezy-php55 all' >> /etc/apt/sources.list.d/dotdeb.list && \
     echo 'deb-src http://packages.dotdeb.org wheezy-php55 all' >> /etc/apt/sources.list.d/dotdeb.list && \
     wget http://www.dotdeb.org/dotdeb.gpg && apt-key add dotdeb.gpg && rm dotdeb.gpg && \
-    apt-get update && \
-    apt-get install -y \
+    apt update && \
+    apt install -y \
         php5-apcu \
         php5-cgi \
         php5-cli \
@@ -52,10 +52,10 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_FPM_CONF_DIR}/999-custom.ini && \
     # CLEAN UP #################################################################
     rm ${PHP_FPM_POOL_DIR}/www.conf && \
-    apt-get clean -y && \
-    apt-get autoclean -y && \
-    apt-get remove -y wget curl && \
-    apt-get autoremove -y && \
+    apt clean -y && \
+    apt autoclean -y && \
+    apt remove -y wget curl && \
+    apt autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
 # FILES (it overrides originals)

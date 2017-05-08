@@ -14,14 +14,14 @@ ENV PHP_FPM_POOL_DIR=${PHP_FPM_DIR}/pool.d
 ENV TZ=Europe/Prague
 
 # INSTALLATION
-RUN apt-get update && apt-get dist-upgrade -y && \
+RUN apt update && apt dist-upgrade -y && \
     # DEPENDENCIES #############################################################
-    apt-get install -y wget curl apt-transport-https ca-certificates && \
+    apt install -y wget curl apt-transport-https ca-certificates && \
     # PHP DEB.SURY.CZ ##########################################################
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
     echo "deb https://packages.sury.org/php/ jessie main" > /etc/apt/sources.list.d/php.list && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends \
+    apt update && \
+    apt install -y --no-install-recommends \
         php7.0-apc \
         php7.0-apcu \
         php7.0-bcmath \
@@ -62,10 +62,10 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_FPM_CONF_DIR}/999-custom.ini && \
     # CLEAN UP #################################################################
     rm ${PHP_FPM_POOL_DIR}/www.conf && \
-    apt-get clean -y && \
-    apt-get autoclean -y && \
-    apt-get remove -y wget curl && \
-    apt-get autoremove -y && \
+    apt clean -y && \
+    apt autoclean -y && \
+    apt remove -y wget curl && \
+    apt autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
 # FILES (it overrides originals)
