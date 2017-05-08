@@ -62,10 +62,10 @@ RUN apt update && apt dist-upgrade -y && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_FPM_CONF_DIR}/999-custom.ini && \
     # CLEAN UP #################################################################
     rm ${PHP_FPM_POOL_DIR}/www.conf && \
-    apt clean -y && \
-    apt autoclean -y && \
-    apt remove -y wget curl && \
-    apt autoremove -y && \
+    apt-get clean -y && \
+    apt-get autoclean -y && \
+    apt-get remove -y wget curl && \
+    apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
 # FILES (it overrides originals)
