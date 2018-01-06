@@ -4,9 +4,9 @@ MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
 # PHP
 ENV PHP_MODS_DIR=/etc/php/7.0/mods-available
-ENV PHP_CLI_DIR=/etc/php/7.0/cli/
+ENV PHP_CLI_DIR=/etc/php/7.0/cli
 ENV PHP_CLI_CONF_DIR=${PHP_CLI_DIR}/conf.d
-ENV PHP_CGI_DIR=/etc/php/7.0/cgi/
+ENV PHP_CGI_DIR=/etc/php/7.0/cgi
 ENV PHP_CGI_CONF_DIR=${PHP_CGI_DIR}/conf.d
 ENV TZ=Europe/Prague
 
