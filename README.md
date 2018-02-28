@@ -1,6 +1,6 @@
 # PHP
 
-Ready-to-use images for PHP 5.5 / 5.6 / 7.0 / 7.1, with FPM and Composer preinstalled.
+Ready-to-use images for PHP 5.5 / 5.6 / 7.0 / 7.1 / 7.2, with FPM and Composer preinstalled.
 
 -----
 
@@ -56,6 +56,29 @@ These images have preinstalled couple of PHP extensions. Let's take a look.
 This super image has also preinstalled [Composer](https://getcomposer.org) with ultra fast plugin [prestissimo](https://github.com/hirak/prestissimo).
 
 ## Usage
+
+### 7.2 / 7.2+FPM
+
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/php72.svg?style=flat)](https://hub.docker.com/r/dockette/php71/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php72.svg?style=flat)](https://hub.docker.com/r/dockette/php71/)
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/php72-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php71-fpm/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php72-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php71-fpm/)
+
+```
+docker run -v /path/to/site:/srv dockette/php72
+docker run -v /path/to/site:/srv dockette/php72-fpm
+```
+
+```
+docker run -v /path/to/site:/srv dockette/php:7.2
+docker run -v /path/to/site:/srv dockette/php:7.2-fpm
+```
+
+In case of customization:
+
+- /etc/php/7.2/cli/conf.d/991-custom.ini
+- /etc/php/7.2/cgi/conf.d/991-custom.ini
+- /etc/php/7.2/fpm/conf.d/991-custom.ini
 
 ### 7.1 / 7.1+FPM
 
