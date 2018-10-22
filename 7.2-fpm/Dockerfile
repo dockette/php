@@ -72,4 +72,4 @@ ADD fpm/php-fpm.conf ${PHP_FPM_DIR}/php-fpm.conf
 WORKDIR /srv
 
 # COMMAND
-CMD ["php-fpm7.1"]
+CMD ["php-fpm7.2"]
