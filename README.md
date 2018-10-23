@@ -105,16 +105,6 @@ In case of customization:
 
 ### 7.0 / 7.0+FPM
 
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/php70.svg?style=flat)](https://hub.docker.com/r/dockette/php70/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php70.svg?style=flat)](https://hub.docker.com/r/dockette/php70/)
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/php7-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php70-fpm/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php7-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php70-fpm/)
-
-```
-docker run -v /path/to/site:/srv dockette/php70
-docker run -v /path/to/site:/srv dockette/php70-fpm
-```
-
 ```
 docker run -v /path/to/site:/srv dockette/php:7.0
 docker run -v /path/to/site:/srv dockette/php:7.0-fpm
@@ -127,16 +117,6 @@ In case of customization:
 - /etc/php/7.0/fpm/conf.d/991-custom.ini
 
 ### 5.6 / 5.6+FPM
-
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/php56.svg?style=flat)](https://hub.docker.com/r/dockette/php56/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php56.svg?style=flat)](https://hub.docker.com/r/dockette/php56/)
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/php56-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php56-fpm/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php56-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php56-fpm/)
-
-```
-docker run -v /path/to/site:/srv dockette/php56
-docker run -v /path/to/site:/srv dockette/php56-fpm
-```
 
 ```
 docker run -v /path/to/site:/srv dockette/php:5.6
@@ -151,15 +131,6 @@ In case of customization:
 
 ### 5.5 / 5.5+FPM
 
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/php55.svg?style=flat)](https://hub.docker.com/r/dockette/php55/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php55.svg?style=flat)](https://hub.docker.com/r/dockette/php55/)
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/php55-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php55-fpm/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php55-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php55-fpm/)
-
-```
-docker run -v /path/to/site:/srv dockette/php55
-docker run -v /path/to/site:/srv dockette/php55-fpm
-```
 
 ```
 docker run -v /path/to/site:/srv dockette/php:5.5
