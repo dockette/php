@@ -11,45 +11,17 @@ Ready-to-use images for PHP 5.5 / 5.6 / 7.0 / 7.1 / 7.2, with FPM and Composer p
 
 [![Join the chat](https://img.shields.io/gitter/room/dockette/dockette.svg?style=flat-square)](https://gitter.im/dockette/dockette?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-## Image
+## Setup
 
-These images have preinstalled couple of PHP extensions. Let's take a look.
+### Linux packages
 
-| PHP       | PHP+FPM   | 
-|-----------|-----------|
-| apc       | apc       | 
-| apcu      | apcu      | 
-| bcmath    | bcmath    | 
-| bz2       | bz2       | 
-| calendar  | calendar  | 
-| cgi       | cgi       | 
-| cli       | cli       | 
-| ctype     | ctype     | 
-| curl      | curl      | 
-| geoip     | geoip     | 
-| gettext   | gettext   | 
-| gd        | gd        | 
-| -         | fpm       | 
-| intl      | intl      | 
-| imagick   | imagick   | 
-| imap      | imap      | 
-| ldap      | ldap      | 
-| mbstring  | mbstring  | 
-| mcrypt    | mcrypt    | 
-| memcached | memcached | 
-| mongo     | mongo     |
-| mysql     | mysql     |
-| pdo       | pdo       | 
-| pgsql     | pgsql     | 
-| redis     | redis     | 
-| soap      | soap      | 
-| sqlite3   | sqlite3   | 
-| ssh2      | ssh2      | 
-| xmlrpc    | xmlrpc    | 
-| xsl       | xsl       | 
-| zip       | zip       | 
+These images have preinstalled couple of linux packages: apt-transport-https ca-certificates git.
 
-## Composer
+### PHP extensions
+
+These images have preinstalled couple of PHP extensions: apc, apcu, bcmath, bz2, calendar, cgi, cli, ctype, curl, fpm (in*-fpm), geoip, gettext, gd, intl, imagick, imap, ldap, mbstring, mcrypt (<7.2), memcached, mongo, mysql, pdo, pgsql redis, soap, sqlite3, ssh2 (<7.2), xmlrpc, xsl, zip.
+
+### Composer
 
 ![Composer](https://avatars3.githubusercontent.com/u/837015?v=3&s=200)
 
@@ -57,88 +29,37 @@ This super image has also preinstalled [Composer](https://getcomposer.org) with 
 
 ## Usage
 
-### 7.2 / 7.2+FPM
-
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/php72.svg?style=flat)](https://hub.docker.com/r/dockette/php71/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php72.svg?style=flat)](https://hub.docker.com/r/dockette/php71/)
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/php72-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php71-fpm/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php72-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php71-fpm/)
+### CLI
 
 ```
-docker run -v /path/to/site:/srv dockette/php72
-docker run -v /path/to/site:/srv dockette/php72-fpm
-```
-
-```
+docker run -v /path/to/site:/srv dockette/php:7.3
+docker run -v /path/to/site:/srv dockette/php:7.3-fpm
 docker run -v /path/to/site:/srv dockette/php:7.2
 docker run -v /path/to/site:/srv dockette/php:7.2-fpm
-```
-
-In case of customization:
-
-- /etc/php/7.2/cli/conf.d/991-custom.ini
-- /etc/php/7.2/cgi/conf.d/991-custom.ini
-- /etc/php/7.2/fpm/conf.d/991-custom.ini
-
-### 7.1 / 7.1+FPM
-
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/php71.svg?style=flat)](https://hub.docker.com/r/dockette/php71/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php71.svg?style=flat)](https://hub.docker.com/r/dockette/php71/)
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/php71-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php71-fpm/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/php71-fpm.svg?style=flat)](https://hub.docker.com/r/dockette/php71-fpm/)
-
-```
-docker run -v /path/to/site:/srv dockette/php71
-docker run -v /path/to/site:/srv dockette/php71-fpm
-```
-
-```
 docker run -v /path/to/site:/srv dockette/php:7.1
 docker run -v /path/to/site:/srv dockette/php:7.1-fpm
-```
-
-In case of customization:
-
-- /etc/php/7.1/cli/conf.d/991-custom.ini
-- /etc/php/7.1/cgi/conf.d/991-custom.ini
-- /etc/php/7.1/fpm/conf.d/991-custom.ini
-
-### 7.0 / 7.0+FPM
-
-```
 docker run -v /path/to/site:/srv dockette/php:7.0
 docker run -v /path/to/site:/srv dockette/php:7.0-fpm
-```
-
-In case of customization:
-
-- /etc/php/7.0/cli/conf.d/991-custom.ini
-- /etc/php/7.0/cgi/conf.d/991-custom.ini
-- /etc/php/7.0/fpm/conf.d/991-custom.ini
-
-### 5.6 / 5.6+FPM
-
-```
 docker run -v /path/to/site:/srv dockette/php:5.6
 docker run -v /path/to/site:/srv dockette/php:5.6-fpm
-```
-
-In case of customization:
-
-- /etc/php/5.6/cli/conf.d/991-custom.ini
-- /etc/php/5.6/cgi/conf.d/991-custom.ini
-- /etc/php/5.6/fpm/conf.d/991-custom.ini
-
-### 5.5 / 5.5+FPM
-
-
-```
 docker run -v /path/to/site:/srv dockette/php:5.5
 docker run -v /path/to/site:/srv dockette/php:5.5-fpm
 ```
 
-In case of customization:
+### Base image
 
-- /etc/php5/cli/conf.d/991-custom.ini
-- /etc/php5/cgi/conf.d/991-custom.ini
-- /etc/php5/fpm/conf.d/991-custom.ini
+```Dockerfile
+FROM dockette/php:7.3-fpm
+
+RUN apt update && apt install -y curl 
+```
+
+## Customization
+
+In case of customization PHP 5.6 - 7.3:
+
+- /etc/php/{5.6,7.0,7.1,7.2,7.3}/{cli,cgi,fpm}/conf.d/991-custom.ini
+
+In case of customization PHP 5.5:
+
+- /etc/php5/{cli,cgi,fpm}/conf.d/991-custom.ini
