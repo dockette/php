@@ -1,6 +1,6 @@
 # PHP
 
-Ready-to-use images for PHP 5.5 / 5.6 / 7.0 / 7.1 / 7.2, with FPM and Composer preinstalled.
+Ready-to-use Debian based images for PHP 5.5, 5.6, 7.0, 7.1, 7.2 and 7.3 with CLI or FPM and Composer preinstalled. Trying to follow the latest releases with official PHP.
 
 -----
 
