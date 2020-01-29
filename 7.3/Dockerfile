@@ -1,6 +1,4 @@
-FROM dockette/stretch
-
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
+FROM dockette/debian:buster
 
 # PHP
 ENV PHP_MODS_DIR=/etc/php/7.3/mods-available
@@ -16,7 +14,7 @@ RUN apt update && apt dist-upgrade -y && \
     apt install -y wget curl apt-transport-https ca-certificates git unzip && \
     # PHP DEB.SURY.CZ ##########################################################
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
-    echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sources.list.d/php.list && \
+    echo "deb https://packages.sury.org/php/ buster main" > /etc/apt/sources.list.d/php.list && \
     apt update && \
     apt install -y --no-install-recommends \
         php7.3-apc \

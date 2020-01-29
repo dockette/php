@@ -1,6 +1,4 @@
-FROM dockette/wheezy
-
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
+FROM dockette/debian:wheezy
 
 # PHP
 ENV PHP_MODS_DIR=/etc/php5/mods-available

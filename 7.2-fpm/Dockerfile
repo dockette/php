@@ -1,6 +1,4 @@
-FROM dockette/stretch
-
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
+FROM dockette/debian:stretch
 
 # PHP
 ENV PHP_MODS_DIR=/etc/php/7.2/mods-available
