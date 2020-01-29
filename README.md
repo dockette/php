@@ -1,6 +1,6 @@
 # PHP
 
-Ready-to-use Debian based images for PHP 5.5, 5.6, 7.0, 7.1, 7.2 and 7.3 with CLI or FPM and Composer preinstalled. Trying to follow the latest releases with official PHP.
+Ready-to-use Debian based images for PHP 5.5, 5.6, 7.0, 7.1, 7.2, 7.3 and 7.4 with CLI or FPM and Composer preinstalled. Trying to follow the latest releases with official PHP.
 
 -----
 
@@ -32,6 +32,8 @@ This super image has also preinstalled [Composer](https://getcomposer.org) with 
 ### CLI
 
 ```
+docker run -v /path/to/site:/srv dockette/php:7.4
+docker run -v /path/to/site:/srv dockette/php:7.4-fpm
 docker run -v /path/to/site:/srv dockette/php:7.3
 docker run -v /path/to/site:/srv dockette/php:7.3-fpm
 docker run -v /path/to/site:/srv dockette/php:7.2
@@ -49,16 +51,16 @@ docker run -v /path/to/site:/srv dockette/php:5.5-fpm
 ### Base image
 
 ```Dockerfile
-FROM dockette/php:7.3-fpm
+FROM dockette/php:7.4-fpm
 
 RUN apt update && apt install -y curl 
 ```
 
 ## Customization
 
-In case of customization PHP 5.6 - 7.3:
+In case of customization PHP 5.6 - 7.4:
 
-- /etc/php/{5.6,7.0,7.1,7.2,7.3}/{cli,cgi,fpm}/conf.d/991-custom.ini
+- /etc/php/{5.6,7.0,7.1,7.2,7.3,7.4}/{cli,cgi,fpm}/conf.d/991-custom.ini
 
 In case of customization PHP 5.5:
 
