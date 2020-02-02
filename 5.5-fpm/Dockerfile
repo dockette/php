@@ -13,7 +13,7 @@ ENV PHP_FPM_POOL_DIR=${PHP_FPM_DIR}/pool.d
 # INSTALLATION
 RUN apt-get update && apt-get dist-upgrade -y && \
     # DEPENDENCIES #############################################################
-    apt-get install -y wget curl git && \
+    apt-get install -y wget curl apt-transport-https ca-certificates git unzip && \
     # PHP DOTDEB ###############################################################
     echo 'deb http://packages.dotdeb.org wheezy-php55 all' >> /etc/apt/sources.list.d/dotdeb.list && \
     echo 'deb-src http://packages.dotdeb.org wheezy-php55 all' >> /etc/apt/sources.list.d/dotdeb.list && \
