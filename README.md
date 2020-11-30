@@ -62,7 +62,7 @@ These images have preinstalled couple of PHP extensions: apc, apcu, bcmath, bz2,
 
 ![Composer](https://avatars3.githubusercontent.com/u/837015?v=3&s=200)
 
-This super image has also preinstalled [Composer](https://getcomposer.org) with ultra fast plugin [prestissimo](https://github.com/hirak/prestissimo).
+This super image has also preinstalled [Composer](https://getcomposer.org).
 
 ### Customization
 
