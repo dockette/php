@@ -1,6 +1,6 @@
 FROM dockette/debian:buster
 
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
+LABEL maintainer="sulcmil@gmail.com"
 
 # PHP
 ENV PHP_MODS_DIR=/etc/php/7.4/mods-available

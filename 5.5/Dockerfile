@@ -1,5 +1,7 @@
 FROM dockette/debian:wheezy
 
+LABEL maintainer="sulcmil@gmail.com"
+
 # PHP
 ENV PHP_MODS_DIR=/etc/php5/mods-available
 ENV PHP_CLI_DIR=/etc/php5/cli
