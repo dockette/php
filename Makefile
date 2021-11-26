@@ -23,4 +23,6 @@ docker-build-7.4: _docker-build-7.4
 docker-build-7.4-fpm: _docker-build-7.4-fpm
 docker-build-8.0: _docker-build-8.0
 docker-build-8.0-fpm: _docker-build-8.0-fpm
+docker-build-8.1: _docker-build-8.1
+docker-build-8.1-fpm: _docker-build-8.1-fpm
 

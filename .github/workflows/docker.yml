@@ -26,6 +26,8 @@ jobs:
           - version: "7.4-fpm"
           - version: "8.0"
           - version: "8.0-fpm"
+          - version: "8.1"
+          - version: "8.1-fpm"
 
       fail-fast: false
 

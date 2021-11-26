@@ -1,7 +1,7 @@
 <h1 align=center>Dockette / PHP</h1>
 
 <p align=center>
-   Ready-to-use Debian based images for PHP 5.5, 5.6, 7.0, 7.1, 7.2, 7.3 and 7.4 with CLI or FPM and Composer preinstalled.
+   Ready-to-use Debian based images for PHP 5.5, 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0 and 8.1 with CLI or FPM and Composer preinstalled.
 </p>
 
 <p align=center>
@@ -24,6 +24,10 @@
 ## Usage
 
 ```
+docker run -v /path/to/site:/srv dockette/php:8.1
+docker run -v /path/to/site:/srv dockette/php:8.1-fpm
+docker run -v /path/to/site:/srv dockette/php:8.0
+docker run -v /path/to/site:/srv dockette/php:8.0-fpm
 docker run -v /path/to/site:/srv dockette/php:7.4
 docker run -v /path/to/site:/srv dockette/php:7.4-fpm
 docker run -v /path/to/site:/srv dockette/php:7.3
@@ -43,7 +47,7 @@ docker run -v /path/to/site:/srv dockette/php:5.5-fpm
 **Base image**
 
 ```Dockerfile
-FROM dockette/php:7.4-fpm
+FROM dockette/php:8.1-fpm
 
 RUN apt update && apt install -y curl 
 ```
@@ -66,9 +70,9 @@ This super image has also preinstalled [Composer](https://getcomposer.org).
 
 ### Customization
 
-In case of customization PHP 5.6 - 7.4:
+In case of customization PHP 5.6 - 8.1:
 
-- /etc/php/{5.6,7.0,7.1,7.2,7.3,7.4}/{cli,cgi,fpm}/conf.d/991-custom.ini
+- /etc/php/{5.6,7.0,7.1,7.2,7.3,7.4,8.0,8.1}/{cli,cgi,fpm}/conf.d/991-custom.ini
 
 In case of customization PHP 5.5:
 
