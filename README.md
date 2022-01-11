@@ -13,10 +13,9 @@
 </p>
 
 <p align=center>
-    <a href="https://hub.docker.com/r/dockette/php/"><img src="https://img.shields.io/docker/stars/dockette/php.svg?style=flat-square"></a>
-    <a href="https://hub.docker.com/r/dockette/php/"><img src="https://img.shields.io/docker/pulls/dockette/php.svg?style=flat-square"></a>
-    <a href="https://bit.ly/ctteg"><img src="https://img.shields.io/gitter/room/contributte/contributte.svg?style=flat-square"></a>
-    <a href="https://github.com/sponsors/f3l1x"><img src="https://img.shields.io/badge/sponsor-me-brightgreen?style=flat-square"></a>
+  <a href="https://hub.docker.com/r/dockette/php/"><img src="https://badgen.net/docker/pulls/dockette/php"></a>
+  <a href="https://bit.ly/ctteg"><img src="https://badgen.net/badge/support/gitter/cyan"></a>
+  <a href="https://github.com/sponsors/f3l1x"><img src="https://badgen.net/badge/sponsor/donations/F96854"></a>
 </p>
 
 -----
