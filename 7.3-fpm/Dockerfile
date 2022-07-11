@@ -16,11 +16,12 @@ ENV TZ=Europe/Prague
 # INSTALLATION
 RUN apt update && apt dist-upgrade -y && \
     # DEPENDENCIES #############################################################
-    apt install -y wget curl apt-transport-https ca-certificates git unzip && \
+    apt install -y wget curl apt-transport-https ca-certificates lsb-release git unzip && \
     # PHP DEB.SURY.CZ ##########################################################
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
-    echo "deb https://packages.sury.org/php/ buster main" > /etc/apt/sources.list.d/php.list && \
+    echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list && \
     apt update && \
+    apt dist-upgrade -y && \
     apt install -y --no-install-recommends \
         php7.3-apc \
         php7.3-apcu \
@@ -34,6 +35,8 @@ RUN apt update && apt dist-upgrade -y && \
         php7.3-fpm \
         php7.3-geoip \
         php7.3-gettext \
+        php7.3-gd \
+        php7.3-intl \
         php7.3-imap \
         php7.3-ldap \
         php7.3-mbstring \
@@ -58,7 +61,7 @@ RUN apt update && apt dist-upgrade -y && \
     rm ${PHP_FPM_POOL_DIR}/www.conf && \
     apt-get clean -y && \
     apt-get autoclean -y && \
-    apt-get remove -y wget curl && \
+    apt-get remove -y wget curl lsb-release && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
