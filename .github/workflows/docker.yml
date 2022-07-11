@@ -10,8 +10,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - version: "5.5"
-          - version: "5.5-fpm"
           - version: "5.6"
           - version: "5.6-fpm"
           - version: "7.0"
@@ -28,6 +26,10 @@ jobs:
           - version: "8.0-fpm"
           - version: "8.1"
           - version: "8.1-fpm"
+          - version: "8.2"
+            platforms: linux/amd64
+          - version: "8.2-fpm"
+            platforms: linux/amd64
 
       fail-fast: false
 
@@ -66,4 +68,4 @@ jobs:
           tags: dockette/php:${{ matrix.version }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
-          platforms: linux/amd64,linux/arm64
+          platforms: ${{ matrix.platforms || 'linux/amd64,linux/arm64' }}

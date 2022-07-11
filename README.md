@@ -23,6 +23,10 @@
 ## Usage
 
 ```
+# experimental
+docker run -v /path/to/site:/srv dockette/php:8.2
+docker run -v /path/to/site:/srv dockette/php:8.2-fpm
+# stable
 docker run -v /path/to/site:/srv dockette/php:8.1
 docker run -v /path/to/site:/srv dockette/php:8.1-fpm
 docker run -v /path/to/site:/srv dockette/php:8.0
@@ -39,8 +43,6 @@ docker run -v /path/to/site:/srv dockette/php:7.0
 docker run -v /path/to/site:/srv dockette/php:7.0-fpm
 docker run -v /path/to/site:/srv dockette/php:5.6
 docker run -v /path/to/site:/srv dockette/php:5.6-fpm
-docker run -v /path/to/site:/srv dockette/php:5.5
-docker run -v /path/to/site:/srv dockette/php:5.5-fpm
 ```
 
 **Base image**
@@ -69,13 +71,9 @@ This super image has also preinstalled [Composer](https://getcomposer.org).
 
 ### Customization
 
-In case of customization PHP 5.6 - 8.1:
+In case of customization PHP 5.6 - 8.2:
 
-- /etc/php/{5.6,7.0,7.1,7.2,7.3,7.4,8.0,8.1}/{cli,cgi,fpm}/conf.d/991-custom.ini
-
-In case of customization PHP 5.5:
-
-- /etc/php5/{cli,cgi,fpm}/conf.d/991-custom.ini
+- /etc/php/{5.6,7.0,7.1,7.2,7.3,7.4,8.0,8.1,8,2}/{cli,cgi,fpm}/conf.d/991-custom.ini
 
 ## Development
 
