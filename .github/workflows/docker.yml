@@ -1,71 +1,46 @@
-name: Docker
+name: "Docker"
 
 on:
+  workflow_dispatch:
+
   push:
-    branches: ["*"]
+    branches: ["master"]
+
+  schedule:
+    - cron: "0 8 * * 1"
 
 jobs:
-  docker:
-    runs-on: ubuntu-latest
+  build:
+    name: "Build"
+    uses: dockette/.github/.github/workflows/docker.yml@master
+    secrets: inherit
+    with:
+        image: "dockette/ci"
+        tag: "${{ matrix.item }}"
+        context: "${{ matrix.item }}"
     strategy:
       matrix:
         include:
-          - version: "5.6"
-          - version: "5.6-fpm"
-          - version: "7.0"
-          - version: "7.0-fpm"
-          - version: "7.1"
-          - version: "7.1-fpm"
-          - version: "7.2"
-          - version: "7.2-fpm"
-          - version: "7.3"
-          - version: "7.3-fpm"
-          - version: "7.4"
-          - version: "7.4-fpm"
-          - version: "8.0"
-          - version: "8.0-fpm"
-          - version: "8.1"
-          - version: "8.1-fpm"
-          - version: "8.2"
-          - version: "8.2-fpm"
-          - version: "8.3"
-          - version: "8.3-fpm"
+          # PHP
+          - item: php56
+          - item: php56-fpm
+          - item: php70
+          - item: php70-fpm
+          - item: php71
+          - item: php71-fpm
+          - item: php72
+          - item: php72-fpm
+          - item: php73
+          - item: php73-fpm
+          - item: php74
+          - item: php74-fpm
+          - item: php80
+          - item: php80-fpm
+          - item: php81
+          - item: php81-fpm
+          - item: php82
+          - item: php82-fpm
+          - item: php83
+          - item: php83-fpm
 
       fail-fast: false
-
-    name: Docker (dockette/php:${{ matrix.version }})
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-
-      - name: Cache Docker layers
-        uses: actions/cache@v2
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}-${{ matrix.version }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-
-
-      - name: Build and push
-        if: github.ref == 'refs/heads/master'
-        uses: docker/build-push-action@v2
-        with:
-          context: ${{ matrix.version  }}
-          push: true
-          tags: dockette/php:${{ matrix.version }}
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache
-          platforms: ${{ matrix.platforms || 'linux/amd64,linux/arm64' }}
