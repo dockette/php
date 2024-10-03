@@ -21,26 +21,25 @@ jobs:
     strategy:
       matrix:
         include:
-          # PHP
-          - item: php56
-          - item: php56-fpm
-          - item: php70
-          - item: php70-fpm
-          - item: php71
-          - item: php71-fpm
-          - item: php72
-          - item: php72-fpm
-          - item: php73
-          - item: php73-fpm
-          - item: php74
-          - item: php74-fpm
-          - item: php80
-          - item: php80-fpm
-          - item: php81
-          - item: php81-fpm
-          - item: php82
-          - item: php82-fpm
-          - item: php83
-          - item: php83-fpm
+          - item: "5.6"
+          - item: "5.6-fpm"
+          - item: "7.0"
+          - item: "7.0-fpm"
+          - item: "7.1"
+          - item: "7.1-fpm"
+          - item: "7.2"
+          - item: "7.2-fpm"
+          - item: "7.3"
+          - item: "7.3-fpm"
+          - item: "7.4"
+          - item: "7.4-fpm"
+          - item: "8.0"
+          - item: "8.0-fpm"
+          - item: "8.1"
+          - item: "8.1-fpm"
+          - item: "8.2"
+          - item: "8.2-fpm"
+          - item: "8.3"
+          - item: "8.3-fpm"
 
       fail-fast: false
