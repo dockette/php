@@ -1,4 +1,4 @@
-FROM dockette/debian:buster
+FROM dockette/debian:bullseye
 
 LABEL maintainer="sulcmil@gmail.com"
 
@@ -20,7 +20,6 @@ RUN apt update && apt dist-upgrade -y && \
     apt update && \
     apt dist-upgrade -y && \
     apt install -y --no-install-recommends \
-        php7.4-apc \
         php7.4-apcu \
         php7.4-bcmath \
         php7.4-bz2 \
@@ -37,7 +36,6 @@ RUN apt update && apt dist-upgrade -y && \
         php7.4-ldap \
         php7.4-mbstring \
         php7.4-memcached \
-        php7.4-mongo \
         php7.4-mysql \
         php7.4-pdo \
         php7.4-pgsql \

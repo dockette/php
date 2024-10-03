@@ -20,8 +20,7 @@ RUN apt update && apt dist-upgrade -y && \
     apt update && \
     apt dist-upgrade -y && \
     apt install -y --no-install-recommends \
-        # php8.3-apc \
-        # php8.3-apcu \
+        php8.3-apcu \
         php8.3-bcmath \
         php8.3-bz2 \
         php8.3-calendar \
@@ -35,16 +34,14 @@ RUN apt update && apt dist-upgrade -y && \
         php8.3-imap \
         php8.3-ldap \
         php8.3-mbstring \
-        # php8.3-memcached \
-        # php8.3-mongo \
+        php8.3-memcached \
         php8.3-mysql \
         php8.3-pdo \
         php8.3-pgsql \
-        # php8.3-redis \
         php8.3-soap \
         php8.3-sqlite3 \
         php8.3-zip \
-        # php8.3-xmlrpc \
+        php8.3-xmlrpc \
         php8.3-xsl && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2 && \

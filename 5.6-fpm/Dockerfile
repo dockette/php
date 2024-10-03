@@ -1,4 +1,4 @@
-FROM dockette/debian:stretch
+FROM dockette/debian:bullseye
 
 LABEL maintainer="sulcmil@gmail.com"
 
@@ -23,7 +23,6 @@ RUN apt update && apt dist-upgrade -y && \
     apt update && \
     apt dist-upgrade -y && \
     apt install -y --no-install-recommends \
-        php5.6-apc \
         php5.6-apcu \
         php5.6-bcmath \
         php5.6-bz2 \
