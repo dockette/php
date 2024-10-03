@@ -20,7 +20,6 @@ RUN apt update && apt dist-upgrade -y && \
     apt update && \
     apt dist-upgrade -y && \
     apt install -y --no-install-recommends \
-        php7.1-apc \
         php7.1-apcu \
         php7.1-bcmath \
         php7.1-bz2 \
@@ -39,7 +38,6 @@ RUN apt update && apt dist-upgrade -y && \
         php7.1-mbstring \
         php7.1-mcrypt \
         php7.1-memcached \
-        php7.1-mongo \
         php7.1-mysql \
         php7.1-pdo \
         php7.1-pgsql \

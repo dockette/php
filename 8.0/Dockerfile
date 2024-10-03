@@ -20,7 +20,6 @@ RUN apt update && apt dist-upgrade -y && \
     apt update && \
     apt dist-upgrade -y && \
     apt install -y --no-install-recommends \
-        php8.0-apc \
         php8.0-apcu \
         php8.0-bcmath \
         php8.0-bz2 \
@@ -36,7 +35,6 @@ RUN apt update && apt dist-upgrade -y && \
         php8.0-ldap \
         php8.0-mbstring \
         php8.0-memcached \
-        php8.0-mongo \
         php8.0-mysql \
         php8.0-pdo \
         php8.0-pgsql \

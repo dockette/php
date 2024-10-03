@@ -42,7 +42,6 @@ RUN apt update && apt dist-upgrade -y && \
         php5.6-mbstring \
         php5.6-mcrypt \
         php5.6-memcached \
-        php5.6-mongo \
         php5.6-mysql \
         php5.6-pdo \
         php5.6-pgsql \
