@@ -1,7 +1,7 @@
 <h1 align=center>Dockette / PHP</h1>
 
 <p align=center>
-   Ready-to-use Debian based images for PHP 5.6-8.3 with CLI or FPM and Composer preinstalled.
+   Ready-to-use Debian based images for PHP 5.6-8.4 with CLI or FPM and Composer preinstalled.
 </p>
 
 <p align=center>
@@ -23,6 +23,8 @@
 ## Usage
 
 ```
+docker run -v /path/to/site:/srv dockette/php:8.4
+docker run -v /path/to/site:/srv dockette/php:8.4-fpm
 docker run -v /path/to/site:/srv dockette/php:8.3
 docker run -v /path/to/site:/srv dockette/php:8.3-fpm
 docker run -v /path/to/site:/srv dockette/php:8.2
@@ -48,7 +50,7 @@ docker run -v /path/to/site:/srv dockette/php:5.6-fpm
 **Base image**
 
 ```Dockerfile
-FROM dockette/php:8.1-fpm
+FROM dockette/php:8.4-fpm
 
 RUN apt update && apt install -y curl 
 ```

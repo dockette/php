@@ -1,29 +1,31 @@
 DOCKER_IMAGE=dockette/php
 
-_docker-build-%: VERSION=$*
-_docker-build-%:
+_build-%: VERSION=$*
+_build-%:
 	docker build \
 		--pull \
 		-t ${DOCKER_IMAGE}:${VERSION} \
 		./${VERSION}
 
-docker-build-5.6: _docker-build-5.6
-docker-build-5.6-fpm: _docker-build-5.6-fpm
-docker-build-7.0: _docker-build-7.0
-docker-build-7.0-fpm: _docker-build-7.0-fpm
-docker-build-7.1: _docker-build-7.1
-docker-build-7.1-fpm: _docker-build-7.1-fpm
-docker-build-7.2: _docker-build-7.2
-docker-build-7.2-fpm: _docker-build-7.2-fpm
-docker-build-7.3: _docker-build-7.3
-docker-build-7.3-fpm: _docker-build-7.3-fpm
-docker-build-7.4: _docker-build-7.4
-docker-build-7.4-fpm: _docker-build-7.4-fpm
-docker-build-8.0: _docker-build-8.0
-docker-build-8.0-fpm: _docker-build-8.0-fpm
-docker-build-8.1: _docker-build-8.1
-docker-build-8.1-fpm: _docker-build-8.1-fpm
-docker-build-8.2: _docker-build-8.2
-docker-build-8.2-fpm: _docker-build-8.2-fpm
-docker-build-8.3: _docker-build-8.3
-docker-build-8.3-fpm: _docker-build-8.3-fpm
+build-5.6: _build-5.6
+build-5.6-fpm: _build-5.6-fpm
+build-7.0: _build-7.0
+build-7.0-fpm: _build-7.0-fpm
+build-7.1: _build-7.1
+build-7.1-fpm: _build-7.1-fpm
+build-7.2: _build-7.2
+build-7.2-fpm: _build-7.2-fpm
+build-7.3: _build-7.3
+build-7.3-fpm: _build-7.3-fpm
+build-7.4: _build-7.4
+build-7.4-fpm: _build-7.4-fpm
+build-8.0: _build-8.0
+build-8.0-fpm: _build-8.0-fpm
+build-8.1: _build-8.1
+build-8.1-fpm: _build-8.1-fpm
+build-8.2: _build-8.2
+build-8.2-fpm: _build-8.2-fpm
+build-8.3: _build-8.3
+build-8.3-fpm: _build-8.3-fpm
+build-8.4: _build-8.4
+build-8.4-fpm: _build-8.4-fpm
