@@ -15,7 +15,7 @@ jobs:
     uses: dockette/.github/.github/workflows/docker.yml@master
     secrets: inherit
     with:
-        image: "dockette/ci"
+        image: "dockette/php"
         tag: "${{ matrix.item }}"
         context: "${{ matrix.item }}"
     strategy:
