@@ -1,8 +1,11 @@
 DOCKER_IMAGE=dockette/php
+DOCKER_PLATFORM?=linux/amd64
 
 _build-%: VERSION=$*
 _build-%:
-	docker build \
+	docker buildx \
+		build \
+		--platform ${DOCKER_PLATFORM} \
 		--pull \
 		-t ${DOCKER_IMAGE}:${VERSION} \
 		./${VERSION}
