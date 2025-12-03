@@ -43,5 +43,7 @@ jobs:
           - item: "8.3-fpm"
           - item: "8.4"
           - item: "8.4-fpm"
+          - item: "8.5"
+          - item: "8.5-fpm"
 
       fail-fast: false
