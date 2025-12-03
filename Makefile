@@ -32,3 +32,5 @@ build-8.3: _build-8.3
 build-8.3-fpm: _build-8.3-fpm
 build-8.4: _build-8.4
 build-8.4-fpm: _build-8.4-fpm
+build-8.5: _build-8.5
+build-8.5-fpm: _build-8.5-fpm
