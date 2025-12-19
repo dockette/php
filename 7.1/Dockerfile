@@ -27,6 +27,7 @@ RUN apt update && apt dist-upgrade -y && \
         php7.1-cgi \
         php7.1-cli \
         php7.1-ctype \
+        php7.1-phpdbg \
         php7.1-curl \
         php7.1-geoip \
         php7.1-gettext \
@@ -51,6 +52,7 @@ RUN apt update && apt dist-upgrade -y && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2 && \
     # PHP MOD(s) ###############################################################
+    ln -s /usr/bin/phpdbg7.1 /usr/bin/phpdbg && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_CLI_CONF_DIR}/999-custom.ini && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_CGI_CONF_DIR}/999-custom.ini && \
     # CLEAN UP #################################################################
