@@ -27,6 +27,7 @@ RUN apt update && apt dist-upgrade -y && \
         php8.4-cgi \
         php8.4-cli \
         php8.4-ctype \
+        php8.4-phpdbg \
         php8.4-curl \
         php8.4-gettext \
         php8.4-gd \
@@ -46,6 +47,7 @@ RUN apt update && apt dist-upgrade -y && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2 && \
     # PHP MOD(s) ###############################################################
+    ln -s /usr/bin/phpdbg8.4 /usr/bin/phpdbg && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_CLI_CONF_DIR}/999-custom.ini && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_CGI_CONF_DIR}/999-custom.ini && \
     # CLEAN UP #################################################################
