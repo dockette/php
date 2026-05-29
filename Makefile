@@ -1,5 +1,15 @@
 DOCKER_IMAGE=dockette/php
 DOCKER_PLATFORM?=linux/amd64
+VERSION?=8.5
+
+.PHONY: build test run test-%
+
+build: build-${VERSION}
+
+test: test-${VERSION} test-${VERSION}-fpm
+
+run:
+	docker run --rm -it -v ${PWD}:/srv ${DOCKER_IMAGE}:${VERSION}
 
 _build-%: VERSION=$*
 _build-%:
@@ -34,3 +44,8 @@ build-8.4: _build-8.4
 build-8.4-fpm: _build-8.4-fpm
 build-8.5: _build-8.5
 build-8.5-fpm: _build-8.5-fpm
+
+test-%:
+	docker run --rm ${DOCKER_IMAGE}:$* php -v
+	docker run --rm ${DOCKER_IMAGE}:$* composer --version
+	if echo "$*" | grep -q -- '-fpm$$'; then docker run --rm ${DOCKER_IMAGE}:$* php-fpm -t; fi
