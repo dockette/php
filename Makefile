@@ -46,4 +46,4 @@ build-8.5: _build-8.5
 build-8.5-fpm: _build-8.5-fpm
 
 test-%:
-	docker run --rm ${DOCKER_IMAGE}:$* sh -lc 'php -v && composer --version && case "$*" in *-fpm) php-fpm -t ;; esac'
+	docker run --rm ${DOCKER_IMAGE}:$* sh -lc 'php -v && composer --version && case "$*" in *-fpm) php-fpm$(subst -fpm,,$*) -t ;; esac'
