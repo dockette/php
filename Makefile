@@ -2,11 +2,11 @@ DOCKER_IMAGE=dockette/php
 DOCKER_PLATFORM?=linux/amd64
 VERSION?=8.5
 
-.PHONY: build test run test-%
+.PHONY: build test run test-cli-% test-fpm-%
 
 build: build-${VERSION}
 
-test: test-${VERSION} test-${VERSION}-fpm
+test: test-cli-${VERSION} test-fpm-${VERSION}
 
 run:
 	docker run --rm -it -v ${PWD}:/srv ${DOCKER_IMAGE}:${VERSION}
@@ -45,5 +45,8 @@ build-8.4-fpm: _build-8.4-fpm
 build-8.5: _build-8.5
 build-8.5-fpm: _build-8.5-fpm
 
-test-%:
-	docker run --rm ${DOCKER_IMAGE}:$* sh -lc 'php -v && composer --version && case "$*" in *-fpm) php-fpm -t ;; esac'
+test-cli-%:
+	docker run --rm ${DOCKER_IMAGE}:$* sh -lc 'php -v && composer --version'
+
+test-fpm-%:
+	docker run --rm ${DOCKER_IMAGE}:$*-fpm sh -lc 'php -v && composer --version && php-fpm$* -t'
