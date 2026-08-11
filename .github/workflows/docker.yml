@@ -19,7 +19,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        item: ["8.5", "8.5-fpm"]
+        include:
+          - item: "8.5"
+            target: "test-cli-8.5"
+          - item: "8.5-fpm"
+            target: "test-fpm-8.5"
 
     steps:
       - name: "Checkout"
@@ -36,7 +40,7 @@ jobs:
           tags: "dockette/php:${{ matrix.item }}"
 
       - name: "Test image"
-        run: "make test-${{ matrix.item }}"
+        run: "make ${{ matrix.target }}"
 
   build:
     name: "Build"
