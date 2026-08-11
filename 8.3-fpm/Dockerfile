@@ -41,6 +41,7 @@ RUN apt update && apt dist-upgrade -y && \
         php8.3-mbstring \
         php8.3-memcached \
         php8.3-mysql \
+        php8.3-pcov \
         php8.3-pdo \
         php8.3-pgsql \
         php8.3-soap \

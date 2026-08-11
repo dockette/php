@@ -38,6 +38,7 @@ RUN apt update && apt dist-upgrade -y && \
         php7.2-mbstring \
         php7.2-memcached \
         php7.2-mysql \
+        php7.2-pcov \
         php7.2-pdo \
         php7.2-pgsql \
         php7.2-redis \

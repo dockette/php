@@ -44,6 +44,7 @@ RUN apt update && apt dist-upgrade -y && \
         php7.1-mcrypt \
         php7.1-memcached \
         php7.1-mysql \
+        php7.1-pcov \
         php7.1-pdo \
         php7.1-pgsql \
         php7.1-redis \

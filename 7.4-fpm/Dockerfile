@@ -42,6 +42,7 @@ RUN apt update && apt dist-upgrade -y && \
         php7.4-mbstring \
         php7.4-memcached \
         php7.4-mysql \
+        php7.4-pcov \
         php7.4-pdo \
         php7.4-pgsql \
         php7.4-redis \

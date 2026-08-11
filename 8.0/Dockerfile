@@ -37,6 +37,7 @@ RUN apt update && apt dist-upgrade -y && \
         php8.0-mbstring \
         php8.0-memcached \
         php8.0-mysql \
+        php8.0-pcov \
         php8.0-pdo \
         php8.0-pgsql \
         php8.0-redis \
