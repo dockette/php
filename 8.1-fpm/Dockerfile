@@ -41,6 +41,7 @@ RUN apt update && apt dist-upgrade -y && \
         php8.1-mbstring \
         php8.1-memcached \
         php8.1-mysql \
+        php8.1-pcov \
         php8.1-pdo \
         php8.1-pgsql \
         php8.1-redis \

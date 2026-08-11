@@ -38,6 +38,7 @@ RUN apt update && apt dist-upgrade -y && \
         php7.3-mbstring \
         php7.3-memcached \
         php7.3-mysql \
+        php7.3-pcov \
         php7.3-pdo \
         php7.3-pgsql \
         php7.3-redis \
