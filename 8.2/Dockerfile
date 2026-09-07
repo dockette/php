@@ -1,4 +1,4 @@
-FROM dockette/debian:bullseye
+FROM dockette/debian:bookworm
 
 LABEL maintainer="sulcmil@gmail.com"
 
