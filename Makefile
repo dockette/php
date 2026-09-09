@@ -2,7 +2,7 @@ DOCKER_IMAGE=dockette/php
 DOCKER_PLATFORM?=linux/amd64
 VERSION?=8.5
 
-.PHONY: build test run test-cli-% test-fpm-%
+.PHONY: build test run test-cli-% test-fpm-% test-pcov-%
 
 build: build-${VERSION}
 
@@ -47,6 +47,13 @@ build-8.5-fpm: _build-8.5-fpm
 
 test-cli-%:
 	docker run --rm ${DOCKER_IMAGE}:$* sh -lc 'php -v && composer --version'
+	${MAKE} test-pcov-$*
 
 test-fpm-%:
 	docker run --rm ${DOCKER_IMAGE}:$*-fpm sh -lc 'php -v && composer --version && php-fpm$* -t'
+	${MAKE} test-pcov-$*-fpm
+
+# pcov requires PHP >= 7.1, older images are expected not to have it
+test-pcov-%:
+	docker run --rm ${DOCKER_IMAGE}:$* php -r 'exit(PHP_VERSION_ID < 70100 || extension_loaded("pcov") ? 0 : 1);' \
+		|| { echo "ERROR: pcov is not loaded in ${DOCKER_IMAGE}:$*" >&2; exit 1; }

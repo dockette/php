@@ -41,6 +41,7 @@ RUN apt update && apt dist-upgrade -y && \
         php8.5-mbstring \
         php8.5-memcached \
         php8.5-mysql \
+        php8.5-pcov \
         php8.5-pdo \
         php8.5-pgsql \
         php8.5-soap \
