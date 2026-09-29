@@ -19,33 +19,16 @@
 
 ## Usage
 
-Install the Composer dependencies of the project in the current folder:
+Mount your project in `/srv` and run a command in it:
 
 ```sh
-docker run --rm -v "$(pwd)":/srv dockette/php:8.5 composer install
+docker run -v "$(pwd)":/srv dockette/php:8.5 composer install
 ```
 
-Based on `dockette/debian:bookworm`. The working directory is `/srv`; mount your project there. The CLI images
-run `php` by default and run as root.
-
-Run PHP-FPM on port `9000`:
-
-```sh
-docker run --rm -p 9000:9000 -v "$(pwd)":/srv dockette/php:8.5-fpm
-```
-
-The FPM images run `php-fpm8.5` (or the matching version) in the foreground and log to stderr. They speak
-FastCGI only, so put a web server such as Nginx or Caddy in front of them.
-
-Use an image as the base for your own:
-
-```Dockerfile
-FROM dockette/php:8.5-fpm
-
-RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/*
-```
-
-The Sury repository is already configured, so more `php8.5-*` extension packages install the same way.
+The image adds Composer 2, about 25 extensions and a `custom.ini` with PHP limits and the `Europe/Prague` time
+zone. The `-fpm` tags run PHP-FPM with one FastCGI pool on port `9000` and `open_basedir` set to
+`/data:/srv:/var/tmp:/tmp`; mount your own `.ini` file into `/etc/php/8.5/cli/conf.d` or
+`/etc/php/8.5/fpm/conf.d` to change a setting, see the [PHP configuration reference](https://www.php.net/manual/en/ini.list.php).
 
 ## Versions
 
@@ -108,39 +91,15 @@ The extensions per version:
 | xsl | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
 | zip | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
 
-## Configuration
-
-Each image adds one `custom.ini`, stored in `/etc/php/{version}/mods-available/custom.ini` and linked as
-`999-custom.ini` into the `cli`, `cgi` and (for `-fpm`) `fpm` config folders. It sets:
-
-```ini
-memory_limit = 521M
-upload_max_filesize = 256M
-post_max_size = 256M
-date.timezone=Europe/Prague
-```
-
-The container time zone is also `Europe/Prague` (`TZ`). To change a setting, mount your own file over
-`/etc/php/8.5/mods-available/custom.ini`, or add a file with a higher number to the `conf.d` folder.
-
-The `-fpm` tags replace the Debian pool with `/etc/php/{version}/fpm/php-fpm.conf`: one `www` pool on port `9000`
-as `www-data`, `pm = dynamic` with up to 9 children, `open_basedir` set to `/data:/srv:/var/tmp:/tmp` and
-`clear_env = yes`. Put your application under `/srv` or `/data`, or PHP can't open its files. Extra pools go to
-`/etc/php/{version}/fpm/pool.d/*.conf`.
-
 ## Development
 
-Build and test the latest version, then run it with the current folder in `/srv`:
-
 ```sh
-make build
-make build VERSION=8.5-fpm
-make test
-make run
+make build   # build the image (VERSION=8.5)
+make test    # smoke test the CLI and FPM image
+make run     # run it with the current folder in /srv
 ```
 
-`VERSION` selects another version (`make build VERSION=8.4`); `make test` tests the CLI and FPM image of one
-version, so build both first. `make help` lists all targets.
+Run `make` to list every target.
 
 ## Maintenance
 
