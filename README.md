@@ -112,6 +112,14 @@ In case of customization PHP 5.6 - 8.5:
 
 - /etc/php/{5.6-8.5}/{cli,cgi,fpm}/conf.d/991-custom.ini
 
+## Versions
+
+Releases are dated: `YYYY.MM.DD`, or `YYYY.MM.DD.N` for another release on the same day. The current version is in
+[`VERSION`](VERSION). CI tags each build with it, `latest` as `<VERSION>` and other tags as `<tag>-<VERSION>` (for
+example `8.4-2026.10.23`), sets the `org.opencontainers.image.version` label and creates the GitHub release.
+
+To release: `make release` sets `VERSION` to today's date (UTC), then commit and push to `master`.
+
 ## Maintenance
 
 See [how to contribute](https://github.com/dockette/.github/blob/master/CONTRIBUTING.md) to this package. Consider to [support](https://github.com/sponsors/f3l1x) **f3l1x**. Thank you for using this package.

@@ -1,8 +1,9 @@
 DOCKER_IMAGE=dockette/php
 DOCKER_PLATFORM?=linux/amd64
 VERSION?=8.5
+RELEASE_VERSION:=$(shell cat VERSION)
 
-.PHONY: build test run test-cli-% test-fpm-% test-pcov-%
+.PHONY: build test run test-cli-% test-fpm-% test-pcov-% version release
 
 build: build-${VERSION}
 
@@ -57,3 +58,16 @@ test-fpm-%:
 test-pcov-%:
 	docker run --rm ${DOCKER_IMAGE}:$* php -r 'exit(PHP_VERSION_ID < 70100 || extension_loaded("pcov") ? 0 : 1);' \
 		|| { echo "ERROR: pcov is not loaded in ${DOCKER_IMAGE}:$*" >&2; exit 1; }
+
+version:
+	@echo ${RELEASE_VERSION}
+
+# Sets VERSION to today's date (UTC), YYYY.MM.DD, or YYYY.MM.DD.N when that
+# date is already released (tagged). Commit and push to master to publish.
+release:
+	@git fetch -q --tags origin 2>/dev/null || true; \
+	v=$$(date -u +%Y.%m.%d); n=0; \
+	while git rev-parse -q --verify "refs/tags/$$v" >/dev/null; do n=$$((n+1)); v=$$(date -u +%Y.%m.%d).$$n; done; \
+	echo "$$v" > VERSION; \
+	echo "VERSION: ${RELEASE_VERSION} -> $$v"; \
+	echo "next: git commit -am 'Release: $$v' && git push"
